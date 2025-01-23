@@ -11,6 +11,7 @@ li {
 a {
     text-decoration: none;
 }
+
 /* 공통 영역 끝 */
 
 /* 헤더 영역 시작 */
@@ -22,6 +23,7 @@ header {
     align-items: center;
     position: fixed;
     justify-content: space-around;
+    z-index: 1;
 }
 
 header div {
@@ -59,7 +61,65 @@ header ul li a::after {
     visibility: hidden;
     font-weight: 900;
 }
+
 /* 헤더 영역 끝 */
+
+/* 메인 영역 시작 */
+#container {
+    width: 1320px;
+    height: 100%;
+    background-color: aquamarine;
+    margin: 0 auto;
+}
+
+#carousel {
+    display: flex;
+}
+
+#carousel img {
+    width: 100%;
+}
+
+.slider {
+    overflow: hidden;
+    padding-top: 75px;
+}
+
+#carousel {
+    animation-name: SlideAnimation;
+    animation: SlideAnimation 8.5s linear infinite;
+}
+
+@keyframes SlideAnimation {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    22%,
+    42% {
+        transform: translateX(-1320px);
+    }
+
+    44%,
+    64% {
+        transform: translateX(-2640px);
+    }
+
+    66%,
+    86% {
+        transform: translateX(-3960px);
+    }
+
+    88%,
+    100% {
+        transform: translateX(-0px);
+    }
+}
+
+
+/* 메인 영역 끝 */
 
 /* 푸터 영역 시작 */
 footer {
@@ -70,4 +130,5 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
 /* 푸터 영역 끝 */

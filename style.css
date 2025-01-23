@@ -118,7 +118,34 @@ header ul li a::after {
     }
 }
 
+/* information 시작 */
+#information_area {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
 
+#information_area img {
+    width: 500px;
+    height: 400px;
+}
+
+#information_area span {
+    margin-left: 15px;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#information_area span a {
+    margin-left: 300px;
+    color: rgb(86, 86, 86);
+}
+
+#information_area span a:hover {
+    color: black;
+}
+
+/* information 끝 */
 /* 메인 영역 끝 */
 
 /* 푸터 영역 시작 */

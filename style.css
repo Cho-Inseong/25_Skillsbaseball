@@ -24,6 +24,8 @@ header {
     position: fixed;
     justify-content: space-around;
     z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 header div {
@@ -146,6 +148,117 @@ header ul li a::after {
 }
 
 /* information 끝 */
+
+/* game_schedule 시작 */
+#game_schedule {
+    width: 100%;
+    height: 500px;
+    margin-top: 80px;
+    border: solid 1px black;
+    border-collapse: collapse;
+}
+
+#game_schedule th {
+    border: solid 1px black;
+}
+
+#schedule_title {
+    font-weight: 900;
+
+}
+
+/* game_schedule 끝 */
+
+/* 모달 시작 */
+#modal {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#modal:target {
+    opacity: 1;
+    display: block;
+}
+
+.modal-content {
+    width: 600px;
+    height: 400px;
+    background-color: yellowgreen;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    margin: 0 auto;
+}
+
+.modal-content h1 {
+    padding-top: 15px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 300px;
+}
+
+.modal-content span {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* 모달 끝 */
+
+/* 금일 게임 현황 시작 */
+.today_game {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    background-color: bisque;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.today_game img {
+    width: 200px;
+    height: 200px;
+}
+
+.today_game ul {
+    display: flex;
+    align-items: center;
+}
+
+.game_score {
+    font-size: 100px;
+    font-weight: 900;
+}
+
+.game_date {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.game_score:hover {
+    font-size: 130px;
+}
+
+.game_score::after {
+    content: attr(title);
+    display: block;
+    height: 0px;
+    visibility: hidden;
+    font-size: 130px;
+}
+/* 금일 게임 현황 끝 */
 /* 메인 영역 끝 */
 
 /* 푸터 영역 시작 */

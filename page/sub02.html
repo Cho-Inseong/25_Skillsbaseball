@@ -33,7 +33,8 @@
                     <!-- 자바스크립트 -->
                 </select>
                 <select id="optionSelect">
-                    <!-- 자바스크립트 -->
+                    <option value="y-axis">세로로 보기</option>
+                    <option value="x-axis">가로로 보기</option>
                 </select>
             </div>
             <div id="chart_area">
@@ -56,5 +57,13 @@
         </p>
     </footer>
     <script src="../script.js"></script>
+    <script src="../선수제공파일/jquery-3.7.1.min.js"></script>
+    <script src="../선수제공파일/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(() => {//page가 실행될때 함수도 실행시키게함
+            Fill_In_Select();
+        }
+        )
+    </script>
 </body>
 </html>

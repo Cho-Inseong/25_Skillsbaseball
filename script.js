@@ -1,5 +1,5 @@
 async function Visitors_json() { //async/await을 사용한 이유: fetch함수는 비동기함수이기 때문에 await을 사용해 fetch가 완료될 때까지 기다리고 fetchData에 저장
-    const fetch_Data = await fetch("./선수제공파일/B_Module/visitors.json");
+    const fetch_Data = await fetch("../선수제공파일/B_Module/visitors.json");
     const visit_Data = await fetch_Data.json(); //await을 이용해json변환이 완료될 떄까지 기라기게함
     return visit_Data["data"] //visitors.json을 visiData변수에 담음 
 };
@@ -42,9 +42,55 @@ function updateChartAndTable(Visitors_Data, league_Name, day, option_Select) {
     const day_Data = league.visitors.find((d) => d.day === day); //위 함수에 저장된 리그의 이름의 요일을 찾는 함수(json파일 참고 (리그이름>visitors>day,visitor))
     const visitor_Data = day_Data.visitor;
 
-    $("#visitorTable").empty();//empty()함수: html요소의 내용을 비우는 함수
+    $("#visitorTable").empty();//empty()함수: html요소의 내용을 비우는 함수(비우는 이유: 혹시라도 이전에 업데이트된 차트가 남아있으면 html이 꼬이기 때문에 삭제를 하고 추가를 한다다
     $("#visitorTable").append( //append()함수: html요소의 내용을 채우는 함수수
         `<thead><tr><th>시간대</th><th>방문자 수</th></tr></thead>`
     );
+
+    const tbody = $("<tbody></tbody>"); //제이쿼리를 사용하여 새로운 html요소를 생성(이 함수를 Dom에 추가하려면 append()를 사용해야함함)
+    for (const [time, count] of Object.entries(visitor_Data)) { //Visitors_Data의 json데이터를 [키, 값]을 각각 변수에 정장해 tbody에 추가하는 코드드
+        //const로 time변수와 count변수 선언
+        //for...of 문으로 json배열 순회(for...of문은 배열, 문자열 객체를 순회하는 반복문 {}괄호를 사용하는 배열은 원래는 불가능하지만 Object.entries()을 사용하면 가능)(for (const 변수 of 반복할_대상) {반복할 코드})
+        tbody.append(`<tr><td>${time}</td><td>${count}</td></tr>`);//`:백틱, 백틱안에서는 자바스크립트의 변수가 사용가능함
+    };
+    $("#visitorTable").append(tbody)//tr이 추가된 tbody를 visitorTable요소에 추가
     
+    $("#chart_area").empty(); //차트부분 html요소 비우기기
+    if(option_Select === "x-axis") {
+        const chart_Container = $("<div></div>"); //div 요소 생성
+        Object.entries(visitor_Data).forEach(([time, count]) => { //forEach만 사용하면 {}객체를 순회할 수 없음 그래서 Object.entries()를 사용함함
+            const percentage = (count / 500) * 100; //문제중에 최대값은 500이라 되있어서 500을 기준으로 값을 정함
+            const bar = $(`
+                <div style="margin-bottom: 10px;">
+                    <div style="width: ${percentage}%; min-width: 20px; height: 20px; background-color: #007bff; color: white;">${count}</div>
+                    <span>${time}</span>
+                </div>
+            `)
+            chart_Container.append(bar); //chart_Container에 bar요소 추가하기기
+        });
+        $("#chart_area").css({ //css(): html요소의 css스타일을 가져오거나 변경하는 함수($(선택자).css(속성, 값); == 단일 css 속성 변경)($(선택자).css({ 속성1: 값1, 속성2: 값2, ... }); == 여러 개의 css 속성 변경경)
+            display: "block",
+        });
+        $("#chart_area").append(chart_Container);
+    } else {
+        const chart_Container = $(
+            "<div style='height: 200px;'></div>"
+          );
+        Object.entries(visitor_Data).forEach(([time, count]) => {
+            const barHeight = (count / 500) * 200;
+            const bar = $(`
+                <div style="margin-right: 10px;">
+                    <div class="bar" style="width: 50px; height: ${barHeight}px; background-color: #007bff; color: white; display: flex; align-items: flex-end; justify-content: center;">${count}</div>
+                    <span>${time}</span>
+                </div>
+            `);
+            chart_Container.append(bar);
+        })
+        $("#chart_area").css({
+            "display": "flex",
+            "justify-content": "center",
+            "text-align": "center",
+        });
+        $("#chart_area").append(chart_Container);
+    };
 };

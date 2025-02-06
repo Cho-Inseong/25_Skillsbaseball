@@ -359,5 +359,13 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
 /* 푸터 영역 끝 */
+
+ /* sub02 시작 */
+.visitors {
+    width: 100%;
+    height: 500px;
+    padding-top: 75px;
+    background-color: violet;
+}
+ /* sub02 끝 */

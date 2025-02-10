@@ -74,7 +74,7 @@ function updateChartAndTable(Visitors_Data, league_Name, day, option_Select) {
         $("#chart_area").append(chart_Container);
     } else {
         const chart_Container = $(
-            "<div style='height: 200px;'></div>"
+            "<div style='height: 200px; display: flex;   '></div>"
           );
         Object.entries(visitor_Data).forEach(([time, count]) => {
             const barHeight = (count / 500) * 200;

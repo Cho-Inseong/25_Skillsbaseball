@@ -9,21 +9,8 @@
 </head>
 
 <body>
-    <header>
-        <div>
-            <img class="logo" src="./img/logo.png" alt="">
-            <ul>
-                <li><a title="Information" href="./page/sub01.html">Information</a></li>
-                <li><a title="Statistics" href="./page/sub02.html">Statistics</a></li>
-                <li><a title="Reservation" href="#">Reservation</a></li>
-                <li><a title="Goods" href="#">Goods</a></li>
-            </ul>
-        </div>
-        <ul class="sing">
-            <li><a title="sign_in" href="#">sign_in</a></li>
-            <li><a title="sign_up" href="#">sign_up</a></li>
-        </ul>
-    </header>
+    <?php include("./component/header.php") ?>
+
     <main id="container">
         <!-- 슬라이더 시작 -->
         <div class="slider">
@@ -135,7 +122,7 @@
                     (1위) 일타율, (2위) 이타율, (3위) 삼타율, (4위) 사타율, (5위) 오타율
                 </div>
             </div>
-
+            
             <div class="accordion">
                 <input type="checkbox" id="accordion2">
                 <label class="accordion-label" for="accordion2">홈런</label>
@@ -143,7 +130,7 @@
                     (1위) 일홈런, (2위) 이홈런, (3위) 삼홈런, (4위) 사홈런, (5위) 오홈런
                 </div>
             </div>
-
+            
             <div class="accordion">
                 <input type="checkbox" id="accordion3">
                 <label class="accordion-label" for="accordion3">다승</label>
@@ -151,7 +138,7 @@
                     (1위) 일다승, (2위) 이다승, (3위) 삼다승, (4위) 사다승, (5위) 오다승
                 </div>
             </div>
-
+            
             <div class="accordion">
                 <input type="checkbox" id="accordion4">
                 <label class="accordion-label" for="accordion4">평균자책</label>
@@ -159,7 +146,7 @@
                     (1위) 일평자, (2위) 이평자, (3위) 삼평자, (4위) 사평자, (5위) 오평자
                 </div>
             </div>
-
+            
             <div class="accordion">
                 <input type="checkbox" id="accordion5">
                 <label class="accordion-label" for="accordion5">탈삼진</label>
@@ -167,7 +154,7 @@
                     (1위) 일삼진, (2위) 이삼진, (3위) 삼삼진, (4위) 사삼진, (5위) 오삼진
                 </div>
             </div>
-
+            
             <div class="accordion">
                 <input type="checkbox" id="accordion6">
                 <label class="accordion-label" for="accordion6">세이브</label>
@@ -177,7 +164,7 @@
             </div>
         </div>
         <!-- 갤러리 영역 시작 -->
-         
+        
         <!-- 굿즈 영역 시작 -->
         <div class="goods_area">
             <img class="goods_imp" src="./선수제공파일/images/28.jpg" alt="">
@@ -186,16 +173,7 @@
             <img src="./선수제공파일/images/34.jpg" alt="">
         </div>
     </main>
-    <footer>
-        <img class="logo" src="./img/logo.png" alt="">
-        <p>
-            [Copyright]<br>
-            Copyrightⓒ Skills baseball park. All rights reserved.<br>
-            Call: 142-3677<br>
-            Email: help@skillsbaseballpark.com<br>
-            Address: (12345) 서울특별서 중구 중북로 71<br>
-        </p>
-    </footer>
+    <?php include("./component/footer.php") ?>
     <!-- 모달 시작 -->
     <div id="modal" class="modal">
         <div class="modal-content">

@@ -8,22 +8,8 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <div>
-            <img class="logo" src="../img/logo.png" alt="">
-            <ul>
-                <li><a title="Information" href="#">Information</a></li>
-                <li><a title="Statistics" href="#">Statistics</a></li>
-                <li><a title="Reservation" href="#">Reservation</a></li>
-                <li><a title="Goods" href="#">Goods</a></li>
-            </ul>
-        </div>
-        <ul class="sing">
-            <li><a title="sign_in" href="#">sign_in</a></li>
-            <li><a title="sign_up" href="#">sign_up</a></li>
-        </ul>
-    </header>
-
+    <?php include("../component/header.php") ?>
+    
     <main id="container">
         <div class="visitors">
             <div class="selecter">
@@ -47,16 +33,8 @@
         </div>
     </main>
 
-    <footer>
-        <img class="logo" src="../img/logo.png" alt="">
-        <p>
-            [Copyright]<br>
-            Copyrightⓒ Skills baseball park. All rights reserved.<br>
-            Call: 142-3677<br>
-            Email: help@skillsbaseballpark.com<br>
-            Address: (12345) 서울특별서 중구 중북로 71<br>
-        </p>
-    </footer>
+    <?php include("../component/footer.php") ?>
+
     <script src="../script.js"></script>
     <script src="../선수제공파일/jquery-3.7.1.min.js"></script>
     <script src="../선수제공파일/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
@@ -65,7 +43,7 @@
         $(document).ready(() => {//page가 실행될때 함수도 실행시키게함
             Fill_In_Select();
         }
-        )
+    )
     </script>
 </body>
 </html>

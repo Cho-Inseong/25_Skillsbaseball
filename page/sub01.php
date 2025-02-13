@@ -7,21 +7,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <div>
-            <img class="logo" src="../img/logo.png" alt="">
-            <ul>
-                <li><a title="Information" href="#">Information</a></li>
-                <li><a title="Statistics" href="#">Statistics</a></li>
-                <li><a title="Reservation" href="#">Reservation</a></li>
-                <li><a title="Goods" href="#">Goods</a></li>
-            </ul>
-        </div>
-        <ul class="sing">
-            <li><a title="sign_in" href="#">sign_in</a></li>
-            <li><a title="sign_up" href="#">sign_up</a></li>
-        </ul>
-    </header>
+    <?php include("../component/header.php") ?>
     <main id="container">
         <p style="padding-top: 100px;">
             [Skills baseball park 소개] <br>
@@ -47,18 +33,9 @@
             경기장 사용 중 시설물 등을 훼손 또는 망실하였을 경우 변상해야 합니다.<br>
             당일 경기 및 연습으로 시설 내에 발생한 모든 인적 또는 물적사고(안전사고)등에 대하여 형사 및 민사상 책임이 있습니다.<br>
             행사가 끝난 후 경기장 주변을 청결히 하고 행사로 발생한 쓰레기 및 각종 오물을 처리하여 다음 경기장 사용에 지장이 없도록 하여야 합니다.<br>
-            </p>
-            <img style="width: 100%;" src="../img/오시는길.png" alt="">
-    </main>
-    <footer>
-        <img class="logo" src="../img/logo.png" alt="">
-        <p>
-            [Copyright]<br>
-            Copyrightⓒ Skills baseball park. All rights reserved.<br>
-            Call: 142-3677<br>
-            Email: help@skillsbaseballpark.com<br>
-            Address: (12345) 서울특별서 중구 중북로 71<br>
         </p>
-    </footer>
+        <img style="width: 100%;" src="../img/오시는길.png" alt="">
+    </main>
+    <?php include("../component/footer.php") ?>
 </body>
 </html>

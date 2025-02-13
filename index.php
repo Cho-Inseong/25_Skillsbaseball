@@ -1,5 +1,5 @@
 <?php
-// db커넥트 들어갈 부분
+include("./config/dbconnect.php");
 session_start(); //로그인 시스템을 만들기 위해 세션을 시작함수 session_start()함수를 사용한다. 이 코드가 없으면 $_SESSION변수를 사용할 수 없음
 
 $request = $_SERVER['REQUEST_METHOD'];// 사용자가 요청한 URL을 가져오는 코드, 도메인 이후의 전체 URL 경로를 포함
@@ -11,5 +11,6 @@ $pages = '';
 switch ($resource[1]) {//$resource[1]에 값이 있으면 switch case문 실행
     case '':
         $pages = './page/index.php';
-}
+};
+include($pages);
 ?>
